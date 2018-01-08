@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+
+
+
+/* Main  */
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+	outline: 0;
+	box-sizing: border-box;
+	
+}
+
+commentedout {
+	border: 2px solid red;
+	
+}
+
+html {
+}
+
+body {
+	margin: 0 auto;
+	background-image: url("../IMG/vintage-concrete.png");
+}
+
+
+.content{
+	margin: auto;
+	width: 100%;
+	max-width: 900px;
+	min-height: 100%;
+	padding: 10px 5% 100px 5%;
+	box-shadow: 0 0 20px 0 rgba(0,0,0,0.25), 6px 6px 20px 0 rgba(0,0,0,0.25);
+	background-color: rgba(255,255,255,0.45);
+	
+}
+
+
+a{
+	color: #111399;
+}
+
+
+p{
+	display: inline-block;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 5px;
+	padding-bottom: 0;
+	font-size: 100%;
+	margin-top: 2px;
+	width: 100%;
+}
+
+
+
+
+
+.indent{
+	display: inline-block;
+	padding-left: 25;
+	display: inline-block;
+}
+
+
+.hangingindent{
+	display: inline-block;
+	padding-left: 70;
+	text-indent: -70px ;
+	display: inline-block;
+}
+
+
+
+.h1{
+	font-size: 250%;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center; 
+	padding-top: 35px; 
+	padding-bottom: 20px; 
+	color: #111399;
+}
+.h2{
+	display: inline-block;
+	font-size: 150%;
+	font-weight: bold;
+	padding-top: 40px;
+	color: #111399;
+}
+.h3{
+	display: inline-block;
+	font-weight:bold;
+	padding-top: 22px;
+	color: #232424;
+}
+.newitem{
+	font-weight:bold;
+	color: red;
+}
+.Question{
+	display: inline-block;
+	padding-top: 15px;
+	font-weight:bold;
+}
+.Answer{
+	display: inline-block;
+}
+.Reference{
+	display: inline-block;
+}
+
+
+/* Standard table to data*/
+.dataTable {
+	border: 1px solid #AAB47E;
+	padding: 2px;
+}
+.dataTable caption {
+	font-size: 150%;
+	font-weight: bold;
+	border-top: 1px solid #AAB47E;
+	padding: 2px;
+}
+.dataTable th {
+    text-align: left;
+	border-bottom: 1px solid #AAB47E;
+}
+.dataTable th.page {
+	text-align: center;
+}
+.dataTable td {
+	text-align: left;
+	padding: 1px;
+}
+.dataTable td.page {
+	text-align: center;
+}
+.dataTable tr {
+	text-align: left;
+}
+.dataTable tr:nth-child(even) {
+    background-color: #eee;
+}
+
+
+
+
+
+/* Top Nav  - Add background color*/
+.topnav {
+	overflow: hidden;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	background-color: #232424;
+	list-style-type: none;
+	
+}
+/* Top Nav  - Style the links inside the navigation bar*/
+.topnav a {
+    float: left;
+    display: block;
+    color: #D1D1BA;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-size: 110%;
+}
+.topnav a.right {
+    float: right;
+}
+/* Top Nav  - Change the color of links on hover*/
+.topnav a:hover {
+    background-color: #111399;
+    color: #D1D1BA;
+}
+/* Top Nav  - Add a color to the active/current link*/
+.topnav a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+
+/* Bottom Nav  */
+.bottomnav {
+	overflow: hidden;
+	width: 100%;
+	bottom: 0;
+    background-color: #232424;
+	
+}
+.bottomnav a {
+    float: left;
+    display: block;
+    color: #D1D1BA;
+    text-align: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 90%;
+}
+.bottomnav a:hover {
+    background-color: #111399;
+    color: #D1D1BA;
+}
+
+
+/* Plain text in either nav bar */
+.navtext {
+    float: left;
+    display: block;
+    color: #D1D1BA;
+    text-align: center;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 90%;
+}
+
+
+
