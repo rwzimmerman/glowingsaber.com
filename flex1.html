@@ -1,0 +1,240 @@
+
+
+<!-- https://www.bitovi.com/blog/use-flexbox-to-create-a-sticky-header-and-sidebar-with-flexible-content  -->
+
+    
+<DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Glowing Saber</title>
+        <meta charset="utf-8">
+        <meta name="description" content="Malifaux Resources">
+        <meta name="keywords" content="Malifaux, Ten Thunders, Wyrd, Glowing Saber, MrDeathTrout">
+        <meta name="author" content="Robert Zimmerman">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <base href="http://glowingsaber.com" target="_self"> -->
+        <link rel="stylesheet" type="text/css" media="screen" href=".\CSS\mainflex.css">
+        <link rel="stylesheet" type="text/css" media="screen" href=".\CSS\glowingSaberflex.css">
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-108278900-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-108278900-1');
+        </script>
+    
+        <!-- Other Scripts -->
+        <script>
+            function hideCity() {
+                var x = document.getElementsByClassName("city");
+                for (var i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+            }
+        </script>
+
+        <!-- Inline Styles -->
+        <style>
+            .button {
+                background-color: #83110F;
+                color: #BBA544;
+                padding: 8px 22px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                margin: 4px 2px;
+                cursor: pointer;
+                border-color: #232424;
+                border-width: 1px;
+                border-style: solid;
+                border-radius: 5px;
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.25), 0 6px 20px 0 rgba(0,0,0,0.25);
+            }
+        
+            .button:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.45), 0 6px 20px 0 rgba(0,0,0,0.45);
+                border-color: black;
+            }
+        
+        
+            table#input {
+                margin: 0 auto; 
+                border-spacing: 3px;
+                
+            }
+        
+            table#input th {
+                color: black;
+                text-align: center;
+            }
+        
+            table#input th.page {
+                text-align: center;
+            }
+            table#input td {
+                color: black;
+                text-align: center;
+                margin-left: 30px;
+                margin-right: 30px;
+                margin-top: 3px;
+                padding-top: 3px;
+                margin-bottom: 0px;
+                border-color: #232424;
+                border-width: 1px;
+                border-style: solid;
+                background-color: white;
+            }
+            table#input td.page {
+                text-align: center;
+            }
+            
+        
+            .maincity {
+                text-align: center;
+            }
+
+
+
+
+
+
+        /* FLEX    FLEX    FLEX    FLEX    FLEX    FLEX    FLEX    FLEX    FLEX */
+
+
+
+
+
+
+
+
+
+        
+        </style>
+        
+        
+
+                
+    </head>
+    
+
+
+
+
+    <body>
+
+
+
+    
+        <div class="container">
+
+
+            <div class="topnav">
+                <a href="index.html">Home</a>
+                <a href="resources.html">Resources</a>
+                <a href="rules.html">Rules</a>
+                <a href="factions.html">Factions</a>
+                <a href="othergames.html">Other Games</a>
+        </div>
+
+             
+        
+
+            <div class="flexhorizonal">
+
+
+                            
+
+                <div class="flexLeftBlock">
+                    <div class="flexleftnavbar">
+                        <a href="#Test1">Test 1</a> 
+                        <a href="#Test2">Test 2</a> 
+                        <a href="#Test3">Test 3</a> 
+                        <a href="#Test4">Test 4</a> 
+                        <a href="#Test5">Test 5</a> 
+                    </div> <!-- End flexleftnavbar -->
+                </div> <!-- End flexLeftBlock -->
+        
+
+                <div class="flexRightBlock">
+
+                        <h1>Header</h1>
+                        <h1>Header</h1>
+                        <h1>Header</h1>
+                        <h1>Header</h1>
+                        
+                    <div class="flexcontent">
+                        <h2 id="Test1"> Test Area 1 </h2>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br><br><br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br><br><br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+
+                        <h2 id="Test2"> Test Area 2 </h2>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br><br><br><br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+
+                        <h2 id="Test3"> Test Area 3 </h2>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br> <br><br><br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+
+                        <h2 id="Test4"> Test Area 4 </h2>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br> <br><br><br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+
+                        <h2 id="Test5"> Test Area 5 </h2>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br> <br><br><br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+                        asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf asdf <br>
+
+                    </div> <!-- End flexcontent -->
+                </div> <!-- End flexRightBlock -->
+            </div> <!-- End Continer -->
+        </div> <!-- End verticle -->
+
+        
+    </body>
+</html>
