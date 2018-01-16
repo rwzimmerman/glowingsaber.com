@@ -128,7 +128,34 @@ commentedout {
 
 
 
-.GSBannerBAK {
+
+
+@media only screen and (max-width:620px) {
+	/* For mobile phones: */
+	.GSBanner {
+		height: 155px;
+		width: 50%;
+	}
+}
+
+
+
+.GSBanner {
+	width: 100%;
+	height: 155px;
+	background-image: url("../IMG/GSBanner.png");
+	background-repeat: no-repeat;
+	background-color: #232424;
+	background-position: center;
+	vertical-align: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+.GSBannerBAK01 {
 	width: 100%;
 	height: 15%;
 	padding-top: 5px;
@@ -140,21 +167,6 @@ commentedout {
 	background-position: center;
 	vertical-align: auto;
 }
-
-
-.GSBanner {
-	height: 155px;
-	width: 100%;
-	padding-top: 5px;
-	padding-bottom: 0px;
-	margin: 0 auto; 
-	background-image: url("../IMG/GSBanner.png");
-	background-repeat: no-repeat;
-	background-color: #232424;
-	background-position: center;
-	vertical-align: auto;
-}
-
 
 
 
