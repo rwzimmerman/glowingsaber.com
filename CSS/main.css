@@ -40,6 +40,12 @@ body {
 }
 
 
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 a{
 	color: #111399;
 }
@@ -114,6 +120,19 @@ p{
 	display: inline-block;
 }
 
+@media only screen and (max-width:620px) {
+	/* For mobile phones: */
+	.h1 {
+		font-size: 200%;
+	}
+	.h2 {
+		font-size: 100%;
+	}
+}
+
+
+
+
 
 /* Standard table to data*/
 .dataTable {
@@ -184,6 +203,15 @@ p{
     background-color: #4CAF50;
     color: white;
 }
+
+@media only screen and (max-width:620px) {
+	/* For mobile phones: */
+	.topnav a {
+		font-size: 90%;
+		padding: 10px 8px;
+	}
+}
+
 
 
 
