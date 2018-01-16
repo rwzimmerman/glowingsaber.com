@@ -38,6 +38,7 @@ body {
 	
 }
 
+
 .content{
 	margin: auto;
 	padding: 25px 5% 100px 5%;
@@ -160,14 +161,14 @@ p{
     text-align: left;
 	border-bottom: 1px solid #AAB47E;
 }
-.dataTable th.page {
+.dataTable th.pagenumber {
 	text-align: center;
 }
 .dataTable td {
 	text-align: left;
 	padding: 1px;
 }
-.dataTable td.page {
+.dataTable td.pagenumber {
 	text-align: center;
 }
 .dataTable tr {
