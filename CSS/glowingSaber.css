@@ -100,9 +100,9 @@ commentedout {
 
 
 
-.bottomnav {
-    background-color: #232424;
-}
+
+
+
 .bottomnav a {
     color: #D1D1BA;
 }
@@ -110,12 +110,7 @@ commentedout {
     background-color: #83110F;
     color: #D1D1BA;
 }
-.bottomnav p {
-    color: #D1D1BA;
-	padding-left: 5px;
-	padding-right: 5px;
-    background-color: #232424;
-}
+
 
 
 
