@@ -62,21 +62,6 @@ commentedout {
 
 
 
-/* Standard table to data*/
-.dataTable {
-
-}
-.dataTable th {
-	padding-left: 5px;
-	padding-right: 5px;
-	
-}
-.dataTable td {
-	padding-left: 5px;
-	padding-right: 5px;
-
-}
-
 
 
 
@@ -150,5 +135,19 @@ commentedout {
 
 
 
+@media screen and (min-width: 0px) and (max-width: 800px) {
+	#suitedOddsNarrow { display: block; }  /* show it on small screens */
+}
 
+@media screen and (min-width: 801px) and (max-width: 3024px) {
+	#suitedOddsNarrow { display: none; }   /* hide it elsewhere */
+}
+
+@media screen and (min-width: 0px) and (max-width: 800px) {
+	#suitedOddsWide { display: none; }  /* show it on small screens */
+}
+
+@media screen and (min-width: 801px) and (max-width: 3024px) {
+	#suitedOddsWide { display: block; }   /* hide it elsewhere */
+}
 
