@@ -57,6 +57,18 @@ img {
 }
 
 
+img.icon {
+	width:17;
+	max-width:100%;
+	height:auto;
+	vertical-align: bottom;
+}
+
+
+
+
+
+
 a{
 	color: #111399;
 }
@@ -170,6 +182,13 @@ p{
 }
 .dataTable td.pagenumber {
 	text-align: center;
+}
+.dataTable td.c {
+	text-align: center;
+}
+.dataTable td.uc {
+	text-align: center;
+	border-bottom: 1px solid #AAB47E;
 }
 .dataTable tr {
 	text-align: left;
