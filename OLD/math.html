@@ -62,8 +62,6 @@
                 <p>All card draws were calculated using a 54-card "Malifaux" deck. That is a deck with cards valued from 1 to 13 for each of four suits, 
                     1 black joker (value of 0 with no suit) and one red joker (value of 14 with a wild suit).</p> 
                 
-
-                <! SUITED CARD DATA>
                 <p class="h2">Drawing a Suited Card</p>
                 <p>This table shows the percentage chance of drawing a suited card or better (verticle axis) when you draw x 
                     number of cards (horizontal axis). For example, if you draw six cards you have a 57.8% chance of having an 8 or higher of any given suit.</p>
@@ -397,10 +395,10 @@
                         </tr>
 
                     </table>
-
                     <br>
-
                     <table class="dataTable"  >
+                        
+
                     <tr>
                         <th>Card</th>
                         <th>6 Cards</th> 
@@ -524,508 +522,223 @@
                     </table>
                 </div>
 
-                <! UNSUITED CARD DATA>
+
                 <p class="h2">Drawing an Unsuited Card</p>
                 <p>This table shows the percentage chance of drawing an unsuited card or better (verticle axis) when you draw x number of cards 
                     (horizontal axis). For example, if you draw six cards you have a 98.0% chance of having at least one 8 or higher, of any suit.</p>
 
-                <button class="button" id="buttonUnsuitedCard" onclick="toggleTable('buttonUnsuitedCard','#unsuitedOddsNarrow','#unsuitedOddsWide')">Display</button>
-                    
-                <div id="unsuitedOddsWide" style="display:none">
+                <table class="dataTable">
+                    <tr>
+                        <th>Card</th>
+                        <th>1 Card</th> 
+                        <th>2 Cards</th> 
+                        <th>3 Cards</th> 
+                        <th>4 Cards</th> 
+                        <th>5 Cards</th> 
+                        <th>6 Cards</th> 
+                        <th>7 Cards</th> 
+                        <th>8 Cards</th> 
+                        <th>9 Cards</th> 
+                        <th>10 Cards</th> 
+                    </tr>
+                    <tr>
+                        <td class="c">BJ</td>
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">1+</td>
+                        <td class="c">98.1%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">2+</td>
+                        <td class="c">90.7%</td> 
+                        <td class="c">99.3%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                        <td class="c">100%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">3+</td>
+                        <td class="c">83.3%</td> 
+                        <td class="c">97.5%</td> 
+                        <td class="c">99.7%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">4+</td>
+                        <td class="c">75.9%</td> 
+                        <td class="c">94.5%</td> 
+                        <td class="c">98.8%</td> 
+                        <td class="c">99.8%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                    </tr>
+                    <tr>
+                        <td class="uc">5+</td>
+                        <td class="uc">68.5%</td> 
+                        <td class="uc">90.5%</td> 
+                        <td class="uc">97.3%</td> 
+                        <td class="uc">99.2%</td> 
+                        <td class="uc">99.8%</td> 
+                        <td class="uc">99.9%</td> 
+                        <td class="uc">99.9%</td> 
+                        <td class="uc">99.9%</td> 
+                        <td class="uc">99.9%</td> 
+                        <td class="uc">99.9%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">6+</td>
+                        <td class="c">61.1%</td> 
+                        <td class="c">85.3%</td> 
+                        <td class="c">94.6%</td> 
+                        <td class="c">98.1%</td> 
+                        <td class="c">99.3%</td> 
+                        <td class="c">99.7%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">7+</td>
+                        <td class="c">53.7%</td> 
+                        <td class="c">79.0%</td> 
+                        <td class="c">90.7%</td> 
+                        <td class="c">96.0%</td> 
+                        <td class="c">98.2%</td> 
+                        <td class="c">99.2%</td> 
+                        <td class="c">99.7%</td> 
+                        <td class="c">99.8%</td> 
+                        <td class="c">99.9%</td> 
+                        <td class="c">99.9%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">8+</td>
+                        <td class="c">46.3%</td> 
+                        <td class="c">71.6%</td> 
+                        <td class="c">85.3%</td> 
+                        <td class="c">92.5%</td> 
+                        <td class="c">96.1%</td> 
+                        <td class="c">98.0%</td> 
+                        <td class="c">98.9%</td> 
+                        <td class="c">99.5%</td> 
+                        <td class="c">99.7%</td> 
+                        <td class="c">99.9%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">9+</td>
+                        <td class="c">38.9%</td> 
+                        <td class="c">63.1%</td> 
+                        <td class="c">78.0%</td> 
+                        <td class="c">87.1%</td> 
+                        <td class="c">92.3%</td> 
+                        <td class="c">95.4%</td> 
+                        <td class="c">97.3%</td> 
+                        <td class="c">98.4%</td> 
+                        <td class="c">99.0%</td> 
+                        <td class="c">99.4%</td> 
+                    </tr>
+                    <tr>
+                        <td class="uc">10+</td>
+                        <td class="uc">31.5%</td> 
+                        <td class="uc">53.5%</td> 
+                        <td class="uc">68.7%</td> 
+                        <td class="uc">79.1%</td> 
+                        <td class="uc">85.9%</td> 
+                        <td class="uc">90.5%</td> 
+                        <td class="uc">83.6%</td> 
+                        <td class="uc">95.7%</td> 
+                        <td class="uc">97.1%</td> 
+                        <td class="uc">98.1%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">11+</td>
+                        <td class="c">24.1%</td> 
+                        <td class="c">42.7%</td> 
+                        <td class="c">57.0%</td> 
+                        <td class="c">68.0%</td> 
+                        <td class="c">76.0%</td> 
+                        <td class="c">82.0%</td> 
+                        <td class="c">86.5%</td> 
+                        <td class="c">89.9%</td> 
+                        <td class="c">92.4%</td> 
+                        <td class="c">94.3%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">12+</td>
+                        <td class="c">16.7%</td> 
+                        <td class="c">30.8%</td> 
+                        <td class="c">42.8%</td> 
+                        <td class="c">52.9%</td> 
+                        <td class="c">61.0%</td> 
+                        <td class="c">67.8%</td> 
+                        <td class="c">73.4%</td> 
+                        <td class="c">78.0%</td> 
+                        <td class="c">81.8%</td> 
+                        <td class="c">84.9%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">13+</td>
+                        <td class="c">9.3%</td> 
+                        <td class="c">17.8%</td> 
+                        <td class="c">25.7%</td> 
+                        <td class="c">33.0%</td> 
+                        <td class="c">39.4%</td> 
+                        <td class="c">45.3%</td> 
+                        <td class="c">50.5%</td> 
+                        <td class="c">55.3%</td> 
+                        <td class="c">59.6%</td> 
+                        <td class="c">63.5%</td> 
+                    </tr>
+                    <tr>
+                        <td class="c">RJ</td>
+                        <td class="c">1.9%</td> 
+                        <td class="c">3.7%</td> 
+                        <td class="c">5.6%</td> 
+                        <td class="c">7.4%</td> 
+                        <td class="c">9.2%</td> 
+                        <td class="c">10.9%</td> 
+                        <td class="c">12.6%</td> 
+                        <td class="c">14.3%</td> 
+                        <td class="c">16.0%</td> 
+                        <td class="c">17.6%</td> 
+                    </tr>
+                </table>
 
-
-                    <table class="dataTable">
-                        <tr>
-                            <th>Card</th>
-                            <th>1 Card</th> 
-                            <th>2 Cards</th> 
-                            <th>3 Cards</th> 
-                            <th>4 Cards</th> 
-                            <th>5 Cards</th> 
-                            <th>6 Cards</th> 
-                            <th>7 Cards</th> 
-                            <th>8 Cards</th> 
-                            <th>9 Cards</th> 
-                            <th>10 Cards</th> 
-                        </tr>
-                        <tr>
-                            <td class="c">BJ</td>
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">1+</td>
-                            <td class="c">98.1%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">2+</td>
-                            <td class="c">90.7%</td> 
-                            <td class="c">99.3%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                            <td class="c">100%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">3+</td>
-                            <td class="c">83.3%</td> 
-                            <td class="c">97.5%</td> 
-                            <td class="c">99.7%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">4+</td>
-                            <td class="c">75.9%</td> 
-                            <td class="c">94.5%</td> 
-                            <td class="c">98.8%</td> 
-                            <td class="c">99.8%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                        </tr>
-                        <tr>
-                            <td class="uc">5+</td>
-                            <td class="uc">68.5%</td> 
-                            <td class="uc">90.5%</td> 
-                            <td class="uc">97.3%</td> 
-                            <td class="uc">99.2%</td> 
-                            <td class="uc">99.8%</td> 
-                            <td class="uc">99.9%</td> 
-                            <td class="uc">99.9%</td> 
-                            <td class="uc">99.9%</td> 
-                            <td class="uc">99.9%</td> 
-                            <td class="uc">99.9%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">6+</td>
-                            <td class="c">61.1%</td> 
-                            <td class="c">85.3%</td> 
-                            <td class="c">94.6%</td> 
-                            <td class="c">98.1%</td> 
-                            <td class="c">99.3%</td> 
-                            <td class="c">99.7%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">7+</td>
-                            <td class="c">53.7%</td> 
-                            <td class="c">79.0%</td> 
-                            <td class="c">90.7%</td> 
-                            <td class="c">96.0%</td> 
-                            <td class="c">98.2%</td> 
-                            <td class="c">99.2%</td> 
-                            <td class="c">99.7%</td> 
-                            <td class="c">99.8%</td> 
-                            <td class="c">99.9%</td> 
-                            <td class="c">99.9%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">8+</td>
-                            <td class="c">46.3%</td> 
-                            <td class="c">71.6%</td> 
-                            <td class="c">85.3%</td> 
-                            <td class="c">92.5%</td> 
-                            <td class="c">96.1%</td> 
-                            <td class="c">98.0%</td> 
-                            <td class="c">98.9%</td> 
-                            <td class="c">99.5%</td> 
-                            <td class="c">99.7%</td> 
-                            <td class="c">99.9%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">9+</td>
-                            <td class="c">38.9%</td> 
-                            <td class="c">63.1%</td> 
-                            <td class="c">78.0%</td> 
-                            <td class="c">87.1%</td> 
-                            <td class="c">92.3%</td> 
-                            <td class="c">95.4%</td> 
-                            <td class="c">97.3%</td> 
-                            <td class="c">98.4%</td> 
-                            <td class="c">99.0%</td> 
-                            <td class="c">99.4%</td> 
-                        </tr>
-                        <tr>
-                            <td class="uc">10+</td>
-                            <td class="uc">31.5%</td> 
-                            <td class="uc">53.5%</td> 
-                            <td class="uc">68.7%</td> 
-                            <td class="uc">79.1%</td> 
-                            <td class="uc">85.9%</td> 
-                            <td class="uc">90.5%</td> 
-                            <td class="uc">83.6%</td> 
-                            <td class="uc">95.7%</td> 
-                            <td class="uc">97.1%</td> 
-                            <td class="uc">98.1%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">11+</td>
-                            <td class="c">24.1%</td> 
-                            <td class="c">42.7%</td> 
-                            <td class="c">57.0%</td> 
-                            <td class="c">68.0%</td> 
-                            <td class="c">76.0%</td> 
-                            <td class="c">82.0%</td> 
-                            <td class="c">86.5%</td> 
-                            <td class="c">89.9%</td> 
-                            <td class="c">92.4%</td> 
-                            <td class="c">94.3%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">12+</td>
-                            <td class="c">16.7%</td> 
-                            <td class="c">30.8%</td> 
-                            <td class="c">42.8%</td> 
-                            <td class="c">52.9%</td> 
-                            <td class="c">61.0%</td> 
-                            <td class="c">67.8%</td> 
-                            <td class="c">73.4%</td> 
-                            <td class="c">78.0%</td> 
-                            <td class="c">81.8%</td> 
-                            <td class="c">84.9%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">13+</td>
-                            <td class="c">9.3%</td> 
-                            <td class="c">17.8%</td> 
-                            <td class="c">25.7%</td> 
-                            <td class="c">33.0%</td> 
-                            <td class="c">39.4%</td> 
-                            <td class="c">45.3%</td> 
-                            <td class="c">50.5%</td> 
-                            <td class="c">55.3%</td> 
-                            <td class="c">59.6%</td> 
-                            <td class="c">63.5%</td> 
-                        </tr>
-                        <tr>
-                            <td class="c">RJ</td>
-                            <td class="c">1.9%</td> 
-                            <td class="c">3.7%</td> 
-                            <td class="c">5.6%</td> 
-                            <td class="c">7.4%</td> 
-                            <td class="c">9.2%</td> 
-                            <td class="c">10.9%</td> 
-                            <td class="c">12.6%</td> 
-                            <td class="c">14.3%</td> 
-                            <td class="c">16.0%</td> 
-                            <td class="c">17.6%</td> 
-                        </tr>
-                    </table>
-                    
-
-
-
-
-                </div> <! Close unsuitedOddsWide Div>
-
-
-                <div id="unsuitedOddsNarrow"  style="display:none">
-
-                        <table class="dataTable">
-                            <tr>
-                                <th>Card</th>
-                                <th>1 Card</th> 
-                                <th>2 Cards</th> 
-                                <th>3 Cards</th> 
-                                <th>4 Cards</th> 
-                                <th>5 Cards</th> 
-                            </tr>
-                            <tr>
-                                <td class="c">BJ</td>
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">1+</td>
-                                <td class="c">98.1%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">2+</td>
-                                <td class="c">90.7%</td> 
-                                <td class="c">99.3%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">3+</td>
-                                <td class="c">83.3%</td> 
-                                <td class="c">97.5%</td> 
-                                <td class="c">99.7%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">4+</td>
-                                <td class="c">75.9%</td> 
-                                <td class="c">94.5%</td> 
-                                <td class="c">98.8%</td> 
-                                <td class="c">99.8%</td> 
-                                <td class="c">99.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="uc">5+</td>
-                                <td class="uc">68.5%</td> 
-                                <td class="uc">90.5%</td> 
-                                <td class="uc">97.3%</td> 
-                                <td class="uc">99.2%</td> 
-                                <td class="uc">99.8%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">6+</td>
-                                <td class="c">61.1%</td> 
-                                <td class="c">85.3%</td> 
-                                <td class="c">94.6%</td> 
-                                <td class="c">98.1%</td> 
-                                <td class="c">99.3%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">7+</td>
-                                <td class="c">53.7%</td> 
-                                <td class="c">79.0%</td> 
-                                <td class="c">90.7%</td> 
-                                <td class="c">96.0%</td> 
-                                <td class="c">98.2%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">8+</td>
-                                <td class="c">46.3%</td> 
-                                <td class="c">71.6%</td> 
-                                <td class="c">85.3%</td> 
-                                <td class="c">92.5%</td> 
-                                <td class="c">96.1%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">9+</td>
-                                <td class="c">38.9%</td> 
-                                <td class="c">63.1%</td> 
-                                <td class="c">78.0%</td> 
-                                <td class="c">87.1%</td> 
-                                <td class="c">92.3%</td> 
-                            </tr>
-                            <tr>
-                                <td class="uc">10+</td>
-                                <td class="uc">31.5%</td> 
-                                <td class="uc">53.5%</td> 
-                                <td class="uc">68.7%</td> 
-                                <td class="uc">79.1%</td> 
-                                <td class="uc">85.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">11+</td>
-                                <td class="c">24.1%</td> 
-                                <td class="c">42.7%</td> 
-                                <td class="c">57.0%</td> 
-                                <td class="c">68.0%</td> 
-                                <td class="c">76.0%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">12+</td>
-                                <td class="c">16.7%</td> 
-                                <td class="c">30.8%</td> 
-                                <td class="c">42.8%</td> 
-                                <td class="c">52.9%</td> 
-                                <td class="c">61.0%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">13+</td>
-                                <td class="c">9.3%</td> 
-                                <td class="c">17.8%</td> 
-                                <td class="c">25.7%</td> 
-                                <td class="c">33.0%</td> 
-                                <td class="c">39.4%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">RJ</td>
-                                <td class="c">1.9%</td> 
-                                <td class="c">3.7%</td> 
-                                <td class="c">5.6%</td> 
-                                <td class="c">7.4%</td> 
-                                <td class="c">9.2%</td> 
-                            </tr>
-                        </table>
-                        
-
-                        <br>
-
-                        <table class="dataTable">
-                            <tr>
-                                <th>Card</th>
-                                <th>6 Cards</th> 
-                                <th>7 Cards</th> 
-                                <th>8 Cards</th> 
-                                <th>9 Cards</th> 
-                                <th>10 Cards</th> 
-                            </tr>
-                            <tr>
-                                <td class="c">BJ</td>
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">1+</td>
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">2+</td>
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                                <td class="c">100%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">3+</td>
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">4+</td>
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="uc">5+</td>
-                                <td class="uc">99.9%</td> 
-                                <td class="uc">99.9%</td> 
-                                <td class="uc">99.9%</td> 
-                                <td class="uc">99.9%</td> 
-                                <td class="uc">99.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">6+</td>
-                                <td class="c">99.7%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">7+</td>
-                                <td class="c">99.2%</td> 
-                                <td class="c">99.7%</td> 
-                                <td class="c">99.8%</td> 
-                                <td class="c">99.9%</td> 
-                                <td class="c">99.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">8+</td>
-                                <td class="c">98.0%</td> 
-                                <td class="c">98.9%</td> 
-                                <td class="c">99.5%</td> 
-                                <td class="c">99.7%</td> 
-                                <td class="c">99.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">9+</td>
-                                <td class="c">95.4%</td> 
-                                <td class="c">97.3%</td> 
-                                <td class="c">98.4%</td> 
-                                <td class="c">99.0%</td> 
-                                <td class="c">99.4%</td> 
-                            </tr>
-                            <tr>
-                                <td class="uc">10+</td>
-                                <td class="uc">90.5%</td> 
-                                <td class="uc">83.6%</td> 
-                                <td class="uc">95.7%</td> 
-                                <td class="uc">97.1%</td> 
-                                <td class="uc">98.1%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">11+</td>
-                                <td class="c">82.0%</td> 
-                                <td class="c">86.5%</td> 
-                                <td class="c">89.9%</td> 
-                                <td class="c">92.4%</td> 
-                                <td class="c">94.3%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">12+</td>
-                                <td class="c">67.8%</td> 
-                                <td class="c">73.4%</td> 
-                                <td class="c">78.0%</td> 
-                                <td class="c">81.8%</td> 
-                                <td class="c">84.9%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">13+</td>
-                                <td class="c">45.3%</td> 
-                                <td class="c">50.5%</td> 
-                                <td class="c">55.3%</td> 
-                                <td class="c">59.6%</td> 
-                                <td class="c">63.5%</td> 
-                            </tr>
-                            <tr>
-                                <td class="c">RJ</td>
-                                <td class="c">10.9%</td> 
-                                <td class="c">12.6%</td> 
-                                <td class="c">14.3%</td> 
-                                <td class="c">16.0%</td> 
-                                <td class="c">17.6%</td> 
-                            </tr>
-                        </table>
-
-
-
-                    </div> <! Close unsuitedOddsNarrow Div>
-
-                    
-            </div> <! Close Content Div>
-
+            </div>
 
             <div class="bottomnav">
                 <span> Contact: </span>
@@ -1033,7 +746,7 @@
             </div>
 
     
-        </div>  <! Close Page Div>
+        </div>
         
 
     </body>
