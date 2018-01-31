@@ -21,11 +21,43 @@
             gtag('config', 'UA-108278900-1');
         </script>
     </head>
-                
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script>
+        function toggleSuitedCard() {
+            $(document).ready(function(){
+                var w = window.innerWidth;
+                var h = window.innerHeight;
+                var buttonText = document.getElementById("buttonSuitedCard").innerHTML;
+
+                if (buttonText == "Display") {
+                    document.getElementById("buttonSuitedCard").innerHTML = "Hide";
+                    if (w > 700) {
+                        $("#suitedOddsWide").slideDown();
+                        document.getElementById("suitedOddsWide").style.visibility = "visible";
+                        $("#suitedOddsNarrow").slideUp();
+                    } else {
+                        $("#suitedOddsWide").slideUp();
+                        $("#suitedOddsNarrow").slideDown();
+                        document.getElementById("suitedOddsNarrow").style.visibility = "visible";
+                    }
+                } else {
+                    document.getElementById("buttonSuitedCard").innerHTML = "Display";
+                    $("#suitedOddsNarrow").slideUp();
+                    $("#suitedOddsWide").slideUp();
+                }
+            });
+        }
+    </script>
+
+
+
+
+
 
     <body>
-            
-                        
         <div class="topnav" id="myTopnav">
             <a href="index.html">Home</a>
             <a href="resources.html">Resources</a>
@@ -47,6 +79,8 @@
             </div>
         
             <div class="content" title="Game Math">
+
+
                 <p class="h1">Game Math</p>
                 <p>Misc calculations.</p> 
 
@@ -55,11 +89,13 @@
                     For example, if you want to draw an eight <img class="icon" src="./IMG/ico_masks.png" alt="Mask"> or higher of with a hand of six cards you have
                     a 57.8% chance of doing so.
                 </p>
+                <button class="button" id="buttonSuitedCard" onclick="toggleSuitedCard()">Display</button>
+                
+                
 
+                <div id="suitedOddsWide" style="display:none">
 
-                <div id="suitedOddsWide">
-
-                    <table class="dataTable" >
+                    <table class="dataTable">
                         <tr>
                             <th>Card</th>
                             <th>1 Card</th> 
@@ -258,7 +294,8 @@
                     </table>
 
                 </div>
-                <div id="suitedOddsNarrow">
+
+                <div id="suitedOddsNarrow" style="display:none">
                     
 
                     <table class="dataTable" >
@@ -385,7 +422,7 @@
 
                     </table>
                     <br>
-                    <table class="dataTable" >
+                    <table class="dataTable"  >
                         
 
                     <tr>
