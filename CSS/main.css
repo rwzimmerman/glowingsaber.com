@@ -190,15 +190,19 @@ p{
 	padding: 2px;
 }
 .dataTable th {
-    text-align: left;
+	font-size: 90%;
+	text-align: left;
 	border-bottom: 1px solid #AAB47E;
 	padding-left: 5px;
 	padding-right: 5px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 .dataTable th.pagenumber {
 	text-align: center;
 }
 .dataTable td {
+	font-size: 90%;
 	text-align: left;
 	padding: 1px;
 	padding-left: 5px;

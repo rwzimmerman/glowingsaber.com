@@ -22,37 +22,13 @@
         </script>
     </head>
 
+
+    <! Load the Jscript Library>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
-    <script>
-        function toggleSuitedCard() {
-            $(document).ready(function(){
-                var w = window.innerWidth;
-                var h = window.innerHeight;
-                var buttonText = document.getElementById("buttonSuitedCard").innerHTML;
-
-                if (buttonText == "Display") {
-                    document.getElementById("buttonSuitedCard").innerHTML = "Hide";
-                    if (w > 700) {
-                        $("#suitedOddsWide").slideDown();
-                        document.getElementById("suitedOddsWide").style.visibility = "visible";
-                        $("#suitedOddsNarrow").slideUp();
-                    } else {
-                        $("#suitedOddsWide").slideUp();
-                        $("#suitedOddsNarrow").slideDown();
-                        document.getElementById("suitedOddsNarrow").style.visibility = "visible";
-                    }
-                } else {
-                    document.getElementById("buttonSuitedCard").innerHTML = "Display";
-                    $("#suitedOddsNarrow").slideUp();
-                    $("#suitedOddsWide").slideUp();
-                }
-            });
-        }
-    </script>
-
-
+    
+    <! Load Glowing Saber Library>
+    <script src=".\scripts\glowingSaber.js"></script>
+    
 
 
 
@@ -82,16 +58,14 @@
 
 
                 <p class="h1">Game Math</p>
-                <p>Misc calculations.</p> 
-
+                <p>Misc thought and tables having to do do with the probabilty of game mechanics.</p> 
+                <p>All card draws were calculated using a 54-card "Malifaux" deck. That is a deck with cards valued from 1 to 13 for each of four suits, 
+                    1 black joker (value of 0 with no suit) and one red joker (value of 14 with a wild suit).</p> 
+                
                 <p class="h2">Drawing a Suited Card</p>
-                <p>This table shows the percentage chance of drawing a suited card or better (verticle axis) when you draw x number of cards (horizontal axis).
-                    For example, if you want to draw an eight <img class="icon" src="./IMG/ico_masks.png" alt="Mask"> or higher of with a hand of six cards you have
-                    a 57.8% chance of doing so.
-                </p>
-                <button class="button" id="buttonSuitedCard" onclick="toggleSuitedCard()">Display</button>
-                
-                
+                <p>This table shows the percentage chance of drawing a suited card or better (verticle axis) when you draw x 
+                    number of cards (horizontal axis). For example, if you draw six cards you have a 57.8% chance of having an 8 or higher of any given suit.</p>
+                <button class="button" id="buttonSuitedCard" onclick="toggleTable('buttonSuitedCard','#suitedOddsNarrow','#suitedOddsWide')">Display</button>
 
                 <div id="suitedOddsWide" style="display:none">
 
@@ -427,7 +401,7 @@
 
                     <tr>
                         <th>Card</th>
-                        <th>6 Card</th> 
+                        <th>6 Cards</th> 
                         <th>7 Cards</th> 
                         <th>8 Cards</th> 
                         <th>9 Cards</th> 
@@ -550,9 +524,9 @@
 
 
                 <p class="h2">Drawing an Unsuited Card</p>
-                <p>This table shows the percentage chance of drawing an unsuited card or better (verticle axis) when you draw x number of cards (horizontal axis).
-                    For example, if you want to draw an eight or higher of with a hand of six cards you have a 98.0% chance of doing so.
-                </p>
+                <p>This table shows the percentage chance of drawing an unsuited card or better (verticle axis) when you draw x number of cards 
+                    (horizontal axis). For example, if you draw six cards you have a 98.0% chance of having at least one 8 or higher, of any suit.</p>
+
                 <table class="dataTable">
                     <tr>
                         <th>Card</th>
