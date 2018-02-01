@@ -214,9 +214,18 @@ p{
 .dataTable td.c {
 	text-align: center;
 }
+.dataTable td.cb {
+	text-align: center;
+	font-weight: bold;
+}
 .dataTable td.uc {
 	text-align: center;
 	border-bottom: 1px solid #AAB47E;
+}
+.dataTable td.ucb {
+	text-align: center;
+	border-bottom: 1px solid #AAB47E;
+	font-weight: bold;
 }
 .dataTable tr {
 	text-align: left;
