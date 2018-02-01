@@ -77,7 +77,7 @@
                 <p>This table shows the percentage chance of drawing a suited card or better (vertical axis) when 
                     you draw x number of cards (horizontal axis). For example, if you draw six cards you have a 
                     57.8% chance of having an 8 or higher of any given suit.</p>
-                <button class="button" id="buttonSuitedCard" onclick="toggleTable('buttonSuitedCard','#suitedOddsNarrow','#suitedOddsWide')">Display</button>
+                <button class="button" id="buttonSuitedCard" onclick="toggleTable('buttonSuitedCard','#suitedOddsWide','#suitedOddsNarrow')">Show</button>
 
                 <div id="suitedOddsWide" style="display:none">
 
@@ -540,7 +540,7 @@
                     draw x number of cards (horizontal axis). For example, if you draw six cards you have a 98.0% chance 
                     of having at least one 8 or higher, of any suit.</p>
 
-                <button class="button" id="buttonUnsuitedCard" onclick="toggleTable('buttonUnsuitedCard','#unsuitedOddsNarrow','#unsuitedOddsWide')">Display</button>
+                <button class="button" id="buttonUnsuitedCard" onclick="toggleTable('buttonUnsuitedCard','#unsuitedOddsWide','#unsuitedOddsNarrow')">Show</button>
                     
                 <div id="unsuitedOddsWide" style="display:none">
 
@@ -1028,18 +1028,15 @@
                         </table>
                     </div> <! Close unsuitedOddsNarrow Div>
 
-                    <p class="Question">How much is a <img class="icon" src=".\IMG\ico_plus.png" alt="+"> worth on a flip?</p>
-                    <p class="Answer">Assuming your opponent is flipping a single card on average they will have a 7.  
-                        With a <img class="icon" src=".\IMG\ico_plus.png" alt="+"> on average you will flip a 10, on 
-                        <img class="icon" src=".\IMG\ico_plus.png" alt="+"><img class="icon" src=".\IMG\ico_plus.png" alt="+"> 
-                        you will flip an 11.  Does that mean Ml 5 with <img class="icon" src=".\IMG\ico_plus.png" alt="+"> 
-                        and Df 8 are equivalent?  Not really, this table does not take into account that if the defender 
-                        flips a high enough card it is impossible to win the duel.  It also does not take cheating into 
-                        account.  If each player has a ‘pure’ hand (no filtering like Rush of Magic or holdovers from 
-                        previous rounds) then the attacker has 7 cards (average draw of 13) to choose from and the defender 
-                        has 6(average draw of 12), cutting their advantage to +1.  So you could say early in the round that 
-                        <img class="icon" src=".\IMG\ico_plus.png" alt="+"> player has a +1 advantage and toward the end 
-                        the advantage approaches +3.</p>
+
+                    <p class="Question">How much is a <img class="icon" src=".\IMG\ico_plus.png" alt="+"> worth?</p>
+                    <p class="Answer">On average a single card flip will yield a 7, a <img class="icon" src=".\IMG\ico_plus.png" alt="+"> flip will yield a 10, and a <img class="icon" src=".\IMG\ico_plus.png" alt="+">  <img class="icon" src=".\IMG\ico_plus.png" alt="+"> an 11. Does that mean Ml 5 with <img class="icon" src=".\IMG\ico_plus.png" alt="+"> and Df 8 are equivalent? </p>
+                    <p class="Answer">No. If each player has an unfiltered hand (no holdovers from last round, no Rush of Magic, etc.) of six cards then an attacker with <img class="icon" src=".\IMG\ico_plus.png" alt="+"> has 8 cards to choose from and the defender has 7 to choose from. If you look at any given result (e.g. having a 6 +) the attacker has at most a 4.8% advantage and the advantage is less than a 1% for a little over half the results. In a nutshell early in the turn the attacker will need to cheat in a card 3 at least higher than the defenders to with the duel.</p>
+                    <p class="Answer">No assume both players have exhausted their hands are relying on just top decking what they need.  The attacker now has a significant advantage. They have a better percentage chance of getting any given result or better, peaking at a 25.3% advantage for a 7+ or 8+.  A 13+ only has a 8.5% advantage, but that is nearly double the chances of the defender flipping a 13+.  Then again if the defender flips a 10 they need a 13+ just to tie.</p>
+                    <p class="Answer">I though once I generated these probability tables it would be easy to answer this question, but it definitely is not simple. IMHO, a <img class="icon" src=".\IMG\ico_plus.png" alt="+"> is definitely not as good as +3, is probably not as good as +2, and is probably better than +1. I would say a <img class="icon" src=".\IMG\ico_plus.png" alt="+"> is roughly equal to +1.5.</p>
+
+
+
                     
             </div> <! Close Content Div>
 

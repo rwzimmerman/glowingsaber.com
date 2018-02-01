@@ -18,14 +18,18 @@ wideDiv is displayed, otherwise the narrowDiv is displayed.
 
 */
 
-function toggleTable(buttonId,narrowDiv,wideDiv) {
+function toggleTable(buttonId,wideDiv,narrowDiv) {
     $(document).ready(function(){
         var w = window.innerWidth;
         var h = window.innerHeight;
         var tableWidth = 700;
         var buttonText = document.getElementById(buttonId).innerHTML;
 
-        if (buttonText == "Display") {
+
+        /* If no narrowDiv is given set it to the wideDiv */
+        if (narrowDiv == "") {narrowDiv = wideDiv}
+
+        if (buttonText == "Show") {
             document.getElementById(buttonId).innerHTML = "Hide";
             if (w > tableWidth) {
                 $(wideDiv).slideDown();
@@ -37,7 +41,7 @@ function toggleTable(buttonId,narrowDiv,wideDiv) {
                 document.getElementById(narrowDiv).style.visibility = "visible";
             }
         } else {
-            document.getElementById(buttonId).innerHTML = "Display";
+            document.getElementById(buttonId).innerHTML = "Show";
             $(narrowDiv).slideUp();
             $(wideDiv).slideUp();
         }

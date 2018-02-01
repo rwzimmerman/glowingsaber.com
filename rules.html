@@ -22,6 +22,13 @@
             </script>
                     
         </head>
+
+        <! Load the Jscript Library>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+        <! Load Glowing Saber Library>
+        <script src=".\scripts\glowingSaber.js"></script>
+    
         
     
         <body>
@@ -59,85 +66,89 @@
                     <p class="h2">Jan 2018 Errata</p> <br> <p>
                     <p>Here are all of the January 2018 Errat. I've put the new points cost for each model/upgrade in brackets after its name.</p>
                     
-                    <p class="h3">Arcanists</p> <br>
-                    Cojo [6] (Cost -2) <br>
-                    Hoarcat Pride [4] (Cost -1) <br>
-                    Ice Golem [9] (Cost -1) <br>
-                    Razorspine Rattler [6] (Cost -1) <br>
-                    Slateridge Mauler [7] (Cost -1) <br>
-                    The Captain [9] (Cost -1) <br>
-                    Patron's Blessing [1] (Cost -1) <br>
-        
-                    <p class="h3">Gremlins</p> <br>
-                    Bayou Bushwhackers [5] (Cost -1) <br>
-                    Burt Jebsen [8] (Cost +1) <br>
-                    Francois LaCroix [8] (Cost +1) <br>
-                    Mancha Roja [9] (Cost -1) <br>
-                    McTavish [11] (Cost +1) <br>
-                    Mechanized Porkchop [6] (Cost -1) <br>
-                    Moon Shinobi [5] (Cost -1) <br>
-                    Rafael LaCroix [6] (Cost -1) <br>
-                    Survivor [4] (Cost -1) <br>
-                    Whiskey Golem [9] (Cost -1) <br>
-                    Wild Boar [5] (Cost -1) <br>
-                    Running Tab [1] (Cost -1) <br>
-                    
-                    <p class="h3">Guild</p> <br>
-                    Captain Dashel [8] (Cost -1) <br>
-                    Guild Guard [3]  (Cost -1) <br>
-                    Guild Lawyer [5] (Cost -1) <br>
-                    Pale Rider [10] (Cost -2) <br>
-                    Samael Hopkins [8] (Cost -1) <br>
-                    The Judge [8] (Cost -1) <br>
-                    The Lone Marshal [7] (Cost -1) <br>
-                    Witchling Handler [7] (Cost -1) <br>
-                    Lead Lined Coat [1] (Cost -1) <br>
-                    
-                    <p class="h3">Neverborn</p> <br>
-                    Baby Kade [6] (Cost -1) <br>
-                    Bad Juju [7] (Cost -1) <br>
-                    Beckoner [6] (Cost -1) <br>
-                    Bunraku [5] (Cost -1) <br>
-                    Hooded Rider [10] (Cost -2) <br>
-                    Lelu [6] (Cost -1) <br>
-                    Spawn Mother [8] (Cost -1) <br>
-                    Tuco [6] (Cost -1) <br>
-                    Vasilisa [8] (Cost -1) <br>
-                    
-                    <p class="h3">Outcasts</p> <br>
-                    Ashes and Dust [14] (Cost +1) <br>
-                    Bishop [9] (Cost -1) <br>
-                    Desperate Mercenary [3] (Cost -1) <br>
-                    Freikorps Specialist [7] (Cost -1) <br>
-                    Freikorps Trapper [7] (Cost +1) <br>
-                    Hans [7] (Cost -1) <br>
-                    Johan [7] (Cost +1) <br>
-                    Taelor [9] (Cost -1) <br>
-                    The Guilty [4] ( Cost -1) <br>
-                    Scramble [1] (Cost -1) <br>
-                    
-                    <p class="h3">Resurrectionists</p> <br>
-                    Dead Rider [10] (Cost -2) <br>
-                    Hayreddin [6] (Cost -1) <br>
-                    Nurse [6] (Cost +1) <br>
-                    Shikome [7] (Cost -1) <br>
-                    Student of Sinew [6] (Cost -1) <br>
-                    Student of Steel [6] (Cost -1) <br>
-                    Student of Viscera [8] (Cost -1) <br>
-                    Sinister Reputation: Gains a 1" <img class="icon" src=".\IMG\ico_melee.png" alt="Smiley face" height="15" width="15"> in addition to the <img class="icon" src=".\IMG\ico_ranged.png" alt="Smiley face" height="15" width="15"> on Live for Pain. <br>
-                    
-                    <p class="h3">Ten Thunders</p> <br>
-                    Dawn Serpent [9] (Cost -1) <br>
-                    Fuhatsu [9] (Cost -1) <br>
-                    Monk of High River [5] (Cost -1) <br>
-                    Ototo [9] (Cost -1) <br>
-                    Terracotta Warriors [6] (Cost +1) <br>
-                    Thunder Archer [6] (Cost -1) <br>
-                    Yamaziko [6] (Cost -1) <br>
-                    Yasunori [13] (Cost +1) <br>
-                    The Storm changes to: "When damaging an enemy model, this model may place all resulting <img class="icon" src=".\IMG\ico_blast.png" alt="Smiley face" height="15" width="15"> Markers anywhere in 8" of this model and within Line of Sight. Markers placed in this way do not need to be touching each other." <br>
-                    </p>
-        
+                    <button class="button" id="buttonJan2018Eratta" onclick="toggleTable('buttonJan2018Eratta','#jan2018Eratta')">Hide</button>
+
+                    <div id="jan2018Eratta">
+
+                        <p class="h3">Arcanists</p> <br>
+                        Cojo [6] (Cost -2) <br>
+                        Hoarcat Pride [4] (Cost -1) <br>
+                        Ice Golem [9] (Cost -1) <br>
+                        Razorspine Rattler [6] (Cost -1) <br>
+                        Slateridge Mauler [7] (Cost -1) <br>
+                        The Captain [9] (Cost -1) <br>
+                        Patron's Blessing [1] (Cost -1) <br>
+            
+                        <p class="h3">Gremlins</p> <br>
+                        Bayou Bushwhackers [5] (Cost -1) <br>
+                        Burt Jebsen [8] (Cost +1) <br>
+                        Francois LaCroix [8] (Cost +1) <br>
+                        Mancha Roja [9] (Cost -1) <br>
+                        McTavish [11] (Cost +1) <br>
+                        Mechanized Porkchop [6] (Cost -1) <br>
+                        Moon Shinobi [5] (Cost -1) <br>
+                        Rafael LaCroix [6] (Cost -1) <br>
+                        Survivor [4] (Cost -1) <br>
+                        Whiskey Golem [9] (Cost -1) <br>
+                        Wild Boar [5] (Cost -1) <br>
+                        Running Tab [1] (Cost -1) <br>
+                        
+                        <p class="h3">Guild</p> <br>
+                        Captain Dashel [8] (Cost -1) <br>
+                        Guild Guard [3]  (Cost -1) <br>
+                        Guild Lawyer [5] (Cost -1) <br>
+                        Pale Rider [10] (Cost -2) <br>
+                        Samael Hopkins [8] (Cost -1) <br>
+                        The Judge [8] (Cost -1) <br>
+                        The Lone Marshal [7] (Cost -1) <br>
+                        Witchling Handler [7] (Cost -1) <br>
+                        Lead Lined Coat [1] (Cost -1) <br>
+                        
+                        <p class="h3">Neverborn</p> <br>
+                        Baby Kade [6] (Cost -1) <br>
+                        Bad Juju [7] (Cost -1) <br>
+                        Beckoner [6] (Cost -1) <br>
+                        Bunraku [5] (Cost -1) <br>
+                        Hooded Rider [10] (Cost -2) <br>
+                        Lelu [6] (Cost -1) <br>
+                        Spawn Mother [8] (Cost -1) <br>
+                        Tuco [6] (Cost -1) <br>
+                        Vasilisa [8] (Cost -1) <br>
+                        
+                        <p class="h3">Outcasts</p> <br>
+                        Ashes and Dust [14] (Cost +1) <br>
+                        Bishop [9] (Cost -1) <br>
+                        Desperate Mercenary [3] (Cost -1) <br>
+                        Freikorps Specialist [7] (Cost -1) <br>
+                        Freikorps Trapper [7] (Cost +1) <br>
+                        Hans [7] (Cost -1) <br>
+                        Johan [7] (Cost +1) <br>
+                        Taelor [9] (Cost -1) <br>
+                        The Guilty [4] ( Cost -1) <br>
+                        Scramble [1] (Cost -1) <br>
+                        
+                        <p class="h3">Resurrectionists</p> <br>
+                        Dead Rider [10] (Cost -2) <br>
+                        Hayreddin [6] (Cost -1) <br>
+                        Nurse [6] (Cost +1) <br>
+                        Shikome [7] (Cost -1) <br>
+                        Student of Sinew [6] (Cost -1) <br>
+                        Student of Steel [6] (Cost -1) <br>
+                        Student of Viscera [8] (Cost -1) <br>
+                        Sinister Reputation: Gains a 1" <img class="icon" src=".\IMG\ico_melee.png" alt="Smiley face" height="15" width="15"> in addition to the <img class="icon" src=".\IMG\ico_ranged.png" alt="Smiley face" height="15" width="15"> on Live for Pain. <br>
+                        
+                        <p class="h3">Ten Thunders</p> <br>
+                        Dawn Serpent [9] (Cost -1) <br>
+                        Fuhatsu [9] (Cost -1) <br>
+                        Monk of High River [5] (Cost -1) <br>
+                        Ototo [9] (Cost -1) <br>
+                        Terracotta Warriors [6] (Cost +1) <br>
+                        Thunder Archer [6] (Cost -1) <br>
+                        Yamaziko [6] (Cost -1) <br>
+                        Yasunori [13] (Cost +1) <br>
+                        The Storm changes to: "When damaging an enemy model, this model may place all resulting <img class="icon" src=".\IMG\ico_blast.png" alt="Smiley face" height="15" width="15"> Markers anywhere in 8" of this model and within Line of Sight. Markers placed in this way do not need to be touching each other." <br>
+                        </p>
+                    </div>
         
         
                     <p class="h2">Timing</p> <br>
