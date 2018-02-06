@@ -1,9 +1,20 @@
 
 
-/*
 
 
-This function toggles a set of Divs between hidden and displayed and 
+/* Returns true if an object is empty. */
+
+function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+}
+
+
+
+/* This function toggles a set of Divs between hidden and displayed and 
 displayd a different Div based on screen width.
 Parameters
     buttonId - The ID (sans #) of the button used to toggle the div display
@@ -14,12 +25,13 @@ When the button is clicked the innerHTML value of the button is read.  If it
 is "Display" the approprate div is displayed other wise all divs are hidden, 
 then the innerHTML value of the button is set the "Hide".
 The screen width is read and if is is greater than the tableWidth value the 
-wideDiv is displayed, otherwise the narrowDiv is displayed.
+wideDiv is displayed, otherwise the narrowDiv is displayed.  */
 
-*/
+
+    
 
 function toggleTable(buttonId,wideDiv,narrowDiv) {
-    $(document).ready(function(){
+    $(document).ready(function(){ 
         var w = window.innerWidth;
         var h = window.innerHeight;
         var tableWidth = 700;
@@ -27,7 +39,7 @@ function toggleTable(buttonId,wideDiv,narrowDiv) {
 
 
         /* If no narrowDiv is given set it to the wideDiv */
-        if (narrowDiv == "") {narrowDiv = wideDiv}
+        if (isEmpty(narrowDiv)) {narrowDiv = wideDiv}
 
         if (buttonText == "Show") {
             document.getElementById(buttonId).innerHTML = "Hide";
@@ -47,3 +59,5 @@ function toggleTable(buttonId,wideDiv,narrowDiv) {
         }
     });
 }
+
+
