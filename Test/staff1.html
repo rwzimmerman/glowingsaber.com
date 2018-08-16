@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.5.4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script type="text/javascript">
+    AWS.config.region = 'us-west-2';
+  </script>
+  <head>
+    <link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+    <style>
+      h1 {font: 400 60px/1.5 'Playfair Display', Georgia, serif;}
+      p {font: 400 16px/1.6 'Muli', Verdana, Helvetica, sans-serif;}
+    </style>
+  </head>
+  <body>
+    <h1>Learning Online - Portal POC - STAFF</h1>
+    <p id="buttonsnboxes">
+      <script>
+        function studentList() {
+          var table = new AWS.DynamoDB({params: {TableName: 'gs_ModelList'}});
+          var key = document.getElementById("Model").value;
+          table.getItem({Key: {Model: {S: key}}}, function(err, data) {
+            if (err) document.getElementById("results").innerHTML = "Error Occured.. Permissions ??";
+            else {
+              var html = "<table border=\"1\"><tr><td>ID</td><td>FirstName</td><td>Last_Name</td>"
+              html +="<td>sex</td><td>DOB</td><td>street_address</td><td>city</td><td>zipcode</td><td>country</td>"
+              html +="<td>govid</td><td>idscan</td></tr>"
+              html +="<tr>"
+              html +=('<td>'+data.Item.Model["S"]+'</td>')
+              html +=('<td>'+data.Item.Df["S"]+'</td>')
+              html +=('<td>'+data.Item.Abilities["S"]+'</td>')
+              html +="</tr>"
+              jQuery("#results").html(html)
+            }
+            //document.getElementById("results").innerHTML = data.Item;
+          });
+        }
+      </script>
+      <script>
+        function courseList() {
+          var table = new AWS.DynamoDB({params: {TableName: 'gs_ModelList'}});
+          table.scan({}, function(err, data) {
+            if (err) document.getElementById("results").innerHTML = "Error Occured.. Permissions ??";
+            else {
+              var html = "<table border=\"1\"><tr><td>#</td><td>Course ID</td><td>Description</td><td>Passmark %</td></tr>"
+              jQuery.each(data.Items, function(index,obj) {
+                html+= ('</tr><td>'+index+'</td><td>'+obj.Model["S"]+'</td><td>'+obj.Df["S"]+'</td><td>'+obj.Abilities["N"]+'</td></tr>')
+              })
+              html += "</table>"
+              jQuery("#results").html(html)
+            }
+          });
+        }
+      </script>
+      <table>
+        <tr>
+          <td> Student </td>
+          <td> Course </td>
+        </tr>
+        <tr>
+          <td> <input type="text" id="student" value="changeme"> </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button onclick="studentList()">Retrieve Student Details</button></td>
+          <td><button onclick="courseList()">List Courses</button></td>
+        </tr>
+      </table>
+    </p>
+    <p id="results">
+    </p>
+  </body>
+</html>
