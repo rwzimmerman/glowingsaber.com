@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Card Slots</title>
+
+</head>
+
+<body>
+		<div id="appframe">
+	
+				<p id="demo1"></p>
+				<p id="demo2"></p>
+				<p id="demo3"></p>
+				<p id="demo4"></p>
+				<p id="demo5"></p>
+				<p id="demo6"></p>
+				<p id="demo7"></p>
+	
+		</div>
+	</body>
+	
+	
+
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.92.0.min.js"></script>
+
+<script type="text/javascript">
+
+	// Initialize the Amazon Cognito credentials provider
+	AWS.config.region = 'us-west-2'; // Region
+	AWS.config.credentials = new AWS.CognitoIdentityCredentials({
+    	IdentityPoolId: 'us-west-2:8871c7f5-7ccd-4e95-9977-ba4118638b80',
+	});
+	
+	/// GET TIME ///
+	var d = new Date();
+	
+
+	/// DISPLAY TEST DATA ///
+	document.getElementById("demo1").innerHTML = "Access Key: " + AWS.config.credentials.accessKeyId;
+	document.getElementById("demo2").innerHTML = "Expired: " + AWS.config.credentials.expired;
+	document.getElementById("demo3").innerHTML = "Expire Time: " + AWS.config.credentials.expireTime;
+	document.getElementById("demo4").innerHTML = "Expiry Window: " + AWS.config.credentials.expiryWindow;
+	document.getElementById("demo5").innerHTML = "Secret Access Key: " + AWS.config.credentials.secretAccessKey;
+	document.getElementById("demo6").innerHTML = "Session Token: " + AWS.config.credentials.sessionToken;
+	document.getElementById("demo6").innerHTML = "Date: " + d.getTime();
+</script>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AWS SDK for JavaScript - Browser Getting Started Application</title>
+</head>
+
+<body>
+    <div id="textToSynth">
+    <input autofocus size="23" type="text" id="textEntry" value="It's very good to meet you."/>
+    <button class="btn default" onClick="speakText()">Synthesize</button><p id="result">Enter text above then click Synthesize</p>
+    <p id="demo1">Test1</p>
+    <p id="demo2">Test2</p>
+    <p id="demo3">Test3</p>
+    <p id="demo4">Test4</p>
+    <p id="demo5">Test5</p>
+    <p id="demo6">Test6</p>
+    <p id="demo7">Test7</p>
+    </div>
+    <audio id="audioPlayback" controls>
+      	<source id="audioSource" type="audio/mp3" src="">
+    	<p id="result">result</p>
+    </audio>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+    <script>
+        // Initialize the Amazon Cognito credentials provider
+        AWS.config.region = 'us-west-2'; 
+        AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'us-west-2:9646ddaf-5385-4f44-a587-4661e2b5665d'});
+        
+        // Function invoked by button click
+        function speakText() {			
+            // Create synthesizeSpeech params JSON
+            var speechParams = {
+                OutputFormat: "mp3",
+                SampleRate: "16000",
+                Text: "",
+                TextType: "text",
+                VoiceId: "Matthew"
+            };
+            speechParams.Text = document.getElementById("textEntry").value;
+            
+            // Create the Polly service object and presigner object
+            var polly = new AWS.Polly({apiVersion: '2016-06-10'});
+            var signer = new AWS.Polly.Presigner(speechParams, polly)
+        
+            // Create presigned URL of synthesized speech file
+            signer.getSynthesizeSpeechUrl(speechParams, function(error, url) {
+                if (error) {
+                document.getElementById('result').innerHTML = error;
+                } else {
+                audioSource.src = url;  	  
+                document.getElementById('result').innerHTML = "Speech ready to play.";
+                }
+            });
+            //Update Test Output
+            document.getElementById("demo1").innerHTML = "Access Key: " + AWS.config.credentials.accessKeyId;
+            document.getElementById("demo2").innerHTML = "Expired: " + AWS.config.credentials.expired;
+            document.getElementById("demo3").innerHTML = "Expire Time: " + AWS.config.credentials.expireTime;
+            document.getElementById("demo4").innerHTML = "Expiry Window: " + AWS.config.credentials.expiryWindow;
+            document.getElementById("demo5").innerHTML = "Secret Access Key: " + AWS.config.credentials.secretAccessKey;
+            document.getElementById("demo6").innerHTML = "Session Token: " + AWS.config.credentials.sessionToken;
+            document.getElementById("demo7").innerHTML = "Date: " + d.getTime();
+
+        }
+        //Function end
+
+
+    </script>
+
+
+    <h1>Learning Online - Portal POC - STAFF</h1>
+    <p id="buttonsnboxes">
+      <script>
+        function studentList() {
+          var table = new AWS.DynamoDB({params: {TableName: 'gs_ModelList'}});
+          var key = document.getElementById("Model").value;
+          table.getItem({Key: {Model: {S: key}}}, function(err, data) {
+            if (err) document.getElementById("results").innerHTML = "Error Occured.. Permissions ??";
+            else {
+              var html = "<table border=\"1\"><tr><td>ID</td><td>FirstName</td><td>Last_Name</td>"
+              html +="<td>sex</td><td>DOB</td><td>street_address</td><td>city</td><td>zipcode</td><td>country</td>"
+              html +="<td>govid</td><td>idscan</td></tr>"
+              html +="<tr>"
+              html +=('<td>'+data.Item.Model["S"]+'</td>')
+              html +=('<td>'+data.Item.Df["S"]+'</td>')
+              html +=('<td>'+data.Item.Abilities["S"]+'</td>')
+              html +="</tr>"
+              jQuery("#results").html(html)
+            }
+            //document.getElementById("results").innerHTML = data.Item;
+          });
+        }
+      </script>
+      <script>
+        function courseList() {
+          var table = new AWS.DynamoDB({params: {TableName: 'gs_ModelList'}});
+          table.scan({}, function(err, data) {
+            if (err) document.getElementById("results").innerHTML = "Error Occured.. Permissions ??";
+            else {
+              var html = "<table border=\"1\"><tr><td>#</td><td>Course ID</td><td>Description</td><td>Passmark %</td></tr>"
+              jQuery.each(data.Items, function(index,obj) {
+                html+= ('</tr><td>'+index+'</td><td>'+obj.Model["S"]+'</td><td>'+obj.Df["S"]+'</td><td>'+obj.Abilities["N"]+'</td></tr>')
+              })
+              html += "</table>"
+              jQuery("#results").html(html)
+            }
+          });
+        }
+      </script>
+      <table>
+        <tr>
+          <td> Student </td>
+          <td> Course </td>
+        </tr>
+        <tr>
+          <td> <input type="text" id="student" value="changeme"> </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><button onclick="studentList()">Retrieve Student Details</button></td>
+          <td><button onclick="courseList()">List Courses</button></td>
+        </tr>
+      </table>
+    </p>
+    <p id="results">
+    </p>
+
+
+
+</body>
+</html>
+

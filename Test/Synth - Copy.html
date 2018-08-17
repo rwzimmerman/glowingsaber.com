@@ -9,6 +9,13 @@
     <div id="textToSynth">
     <input autofocus size="23" type="text" id="textEntry" value="It's very good to meet you."/>
     <button class="btn default" onClick="speakText()">Synthesize</button><p id="result">Enter text above then click Synthesize</p>
+    <p id="demo1">Test1</p>
+    <p id="demo2">Test2</p>
+    <p id="demo3">Test3</p>
+    <p id="demo4">Test4</p>
+    <p id="demo5">Test5</p>
+    <p id="demo6">Test6</p>
+    <p id="demo7">Test7</p>
     </div>
     <audio id="audioPlayback" controls>
       	<source id="audioSource" type="audio/mp3" src="">
@@ -38,15 +45,29 @@
         
             // Create presigned URL of synthesized speech file
             signer.getSynthesizeSpeechUrl(speechParams, function(error, url) {
-            if (error) {
-        	  document.getElementById('result').innerHTML = error;
-            } else {
-        	  audioSource.src = url;  	  
-        	  document.getElementById('result').innerHTML = "Speech ready to play.";
-            }
-          });
+                if (error) {
+                document.getElementById('result').innerHTML = error;
+                } else {
+                audioSource.src = url;  	  
+                document.getElementById('result').innerHTML = "Speech ready to play.";
+                }
+            });
+            //Update Test Output
+            document.getElementById("demo1").innerHTML = "Access Key: " + AWS.config.credentials.accessKeyId;
+            document.getElementById("demo2").innerHTML = "Expired: " + AWS.config.credentials.expired;
+            document.getElementById("demo3").innerHTML = "Expire Time: " + AWS.config.credentials.expireTime;
+            document.getElementById("demo4").innerHTML = "Expiry Window: " + AWS.config.credentials.expiryWindow;
+            document.getElementById("demo5").innerHTML = "Secret Access Key: " + AWS.config.credentials.secretAccessKey;
+            document.getElementById("demo6").innerHTML = "Session Token: " + AWS.config.credentials.sessionToken;
+            document.getElementById("demo7").innerHTML = "Date: " + d.getTime();
+
         }
+        //Function end
+
+
     </script>
+
+
 </body>
 </html>
 
