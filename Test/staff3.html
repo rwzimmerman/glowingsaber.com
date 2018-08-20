@@ -36,28 +36,40 @@
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 var params = {
-    TableName : "Movies",
-    KeyConditionExpression: "#yr = :yyyy",
+    TableName : "gs_Faction",
+    KeyConditionExpression: "#s = :yyyy",
     ExpressionAttributeNames:{
-        "#yr": "year"
+        "#s": "Faction"
     },
     ExpressionAttributeValues: {
-        ":yyyy": 1995
+        ":yyyy": "Ten Thunders"
     }
 };
 
 docClient.query(params, function(err, data) {
     if (err) {
         console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
-        document.getElementById("tableTitle").innerHTML = "errer";
+        document.getElementById("tableTitle").innerHTML = "error";
     } else {
         console.log("Query succeeded.");
         document.getElementById("tableTitle").innerHTML = "success";
         data.Items.forEach(function(item) {
-            console.log(" -", item.year + ": " + item.title);
-            document.getElementById("tableTitle").innerHTML = item.title;
-        });
-    }
+          //console.log(" -", item.year + ": " + item.title);
+          //document.getElementById("tableTitle").innerHTML = item.Faction;
+
+        }); //End foreEach
+
+        var html = "<table border=\"1\"><tr><td>Faction</td><td>Model</td></tr>"
+          jQuery.each(data.Items, function(index,obj) {
+            document.getElementById("tableTitle").innerHTML = obj.Faction;
+            html+= ('</tr><td>'+obj.Faction+'</td><td>'+obj.Model+'</td></tr>')
+        })
+        html += "</table>"
+        jQuery("#results").html(html)
+
+
+
+    } //END ELSE
 });
 
 
@@ -174,7 +186,7 @@ docClient.query(params, function(err, data) {
   </head>
 
   <body>
-    <h1>Staff 2</h1>
+    <h1>Staff 3</h1>
     <p id="buttonsnboxes">
       <table>
         <tr>
