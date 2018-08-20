@@ -77,6 +77,8 @@
           if (err) {
               console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
               document.getElementById("status").innerHTML = "Status: Error";
+          } else if (5 == 5) {
+            return data
           } else {
               console.log("Query succeeded.");
               document.getElementById("status").innerHTML = "Status: Success";
@@ -91,6 +93,27 @@
       });
     }
   </script>
+
+
+  <script>
+    function returnTest() {
+
+      var dataList = factionList('Characteristic');
+      
+      document.getElementById("status").innerHTML = "Status: Success";
+      //Output results to table
+      var html = "<table border=\"1\"><tr><td>Faction</td><td>Model</td></tr>"
+        jQuery.each(dataList.Items, function(index,obj) {
+          html+= ('</tr><td>'+obj.Faction+'</td><td>'+obj.Model+'</td></tr>')
+      })
+      html += "</table>"
+      jQuery("#results").html(html)
+
+
+    }
+    
+  </script>
+
 
 
 
@@ -236,6 +259,7 @@
           <td><button onclick="modelList()">List All Models</button></td>
           <td><button onclick="factionList('Faction')">Faction List</button></td>
           <td><button onclick="factionList('Characteristic')">Characteristic List</button></td>
+          <td><button onclick="returnTest()">returnTest</button></td>
         </tr>
         <tr><td id="query"> Query: </td></tr>
         <tr><td id="status"> Status: </td></tr>
