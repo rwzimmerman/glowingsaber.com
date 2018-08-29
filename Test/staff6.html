@@ -5,6 +5,7 @@
 
   <script type="text/javascript">
     //CREDENTIALS //
+    //Gets the credentials from AWS Cognito that allow access to the Dynamo DB
     //AWS.config.update({accessKeyId: 'AKIAIJ2773J3RQ4KRJ6Q', secretAccessKey: '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'});
     AWS.config.credentials = new AWS.CognitoIdentityCredentials({IdentityPoolId: 'us-west-2:9646ddaf-5385-4f44-a587-4661e2b5665d'});
     AWS.config.region = 'us-west-2';
@@ -14,11 +15,15 @@
 
 
 
-  <!--TEST AREA-->
 
 
-
-
+  <script>
+    function sessionStateTest() {
+    //Test SessionState
+      sessionStorage.faction = "This Faction"
+      document.getElementById("sessionStateTest").innerHTML = "Session State Test: " + sessionStorage.faction;
+    }
+  </script>
 
 
 
@@ -77,8 +82,6 @@
           if (err) {
               console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
               document.getElementById("status").innerHTML = "Status: Error";
-          } else if (5 == 5) {
-            return data
           } else {
               console.log("Query succeeded.");
               document.getElementById("status").innerHTML = "Status: Success";
@@ -95,36 +98,12 @@
   </script>
 
 
-  <script>
-    function returnTest() {
 
-      var dataList = factionList('Characteristic');
-      
-      document.getElementById("status").innerHTML = "Status: Success";
-      //Output results to table
-      var html = "<table border=\"1\"><tr><td>Faction</td><td>Model</td></tr>"
-        jQuery.each(dataList.Items, function(index,obj) {
-          html+= ('</tr><td>'+obj.Faction+'</td><td>'+obj.Model+'</td></tr>')
-      })
-      html += "</table>"
-      jQuery("#results").html(html)
-
-
-    }
-    
-  </script>
-
-
-
-
-
-
-  <!--END TEST AREA-->
 
 
   <script>
     function modelList() {
-      document.getElementById("query").innerHTML = "Model List";
+      document.getElementById("query").innerHTML = "Scan: Model List";
       var table = new AWS.DynamoDB({params: {TableName: 'gs_ModelList'}});
       table.scan({}, function(err, data) {
         if (err) document.getElementById("results").innerHTML = "Error Occured.. Permissions ??";
@@ -139,6 +118,8 @@
       });
     }
   </script>
+
+
 
 
 
@@ -162,35 +143,8 @@
 
 
 
-  <script>
-    function studentList() {
-      var table = new AWS.DynamoDB({params: {TableName: 'gs_Faction'}});
-      var key = "Ten Thunders";
-      table.batchGetItem({Key: {gs_Faction: {S: key}}}, function(err, data) {
-        if (err) document.getElementById("results").innerHTML = "Error Occured.. Permissions ??";
-        else {
-          var html = "<table border=\"1\"><tr><td>ID</td><td>FirstName</td><td>Last_Name</td>"
-          html +="<td>sex</td><td>DOB</td><td>street_address</td><td>city</td><td>zipcode</td><td>country</td>"
-          html +="<td>govid</td><td>idscan</td></tr>"
-          html +="<tr>"
-          html +=('<td>'+data.Item.s_id["S"]+'</td>')
-          html +=('<td>'+data.Item.first_name["S"]+'</td>')
-          html +=('<td>'+data.Item.last_name["S"]+'</td>')
-          html +=('<td>'+data.Item.sex["S"]+'</td>')
-          html +=('<td>'+data.Item.birthdate["S"]+'</td>')
-          html +=('<td>'+data.Item.street_address["S"]+'</td>')
-          html +=('<td>'+data.Item.city["S"]+'</td>')
-          html +=('<td>'+data.Item.zipcode["S"]+'</td>')
-          html +=('<td>'+data.Item.country["S"]+'</td>')
-          html +=('<td>'+data.Item.govid["S"]+'</td>')
-          html +=('<td>'+data.Item.govid["S"]+'</td>')
-          html +="</tr>"
-          jQuery("#results").html(html)
-        }
-        //document.getElementById("results").innerHTML = data.Item;
-      });
-    }
-  </script>
+
+
 
   <script>
     function courseList() {
@@ -225,26 +179,45 @@
 
   <body>
     <h1>Staff 6</h1>
-    <p id="buttonsnboxes">
+    <p>
 
-        Faction:
-        <select id="cboFaction">
-            <option value="Ten Thunders">Ten Thunders</option>
-            <option value="Neverborn">Neverborn</option>
-            <option value="Arcanists">Arcanists</option>
-            <option value="Outcasts">Outcasts</option>
-          </select>
+
+      <button onclick="modelList()">List All Models</button>
+      <br>
+
+      Faction:
+      <select id="cboFaction">
+        <option value="Ten Thunders">Ten Thunders</option>
+        <option value="Neverborn">Neverborn</option>
+        <option value="Arcanists">Arcanists</option>
+        <option value="Outcasts">Outcasts</option>
+      </select>
+      <td><button onclick="factionList('Faction')">Faction List</button></td>
+      <br>
+
+      Characteristic:
+      <select id="cboCharacteristic">
+        <option value="Last Blossom">Last Blossom</option>
+        <option value="Beast">Beast</option>
+        <option value="Master">Master</option>
+        <option value="Minion">Minion</option>
+      </select>
+      <td><button onclick="factionList('Characteristic')">Characteristic List</button></td>
+      <br>
+
+      <p id="results"> </p>
+
+
+      <span><strong>Status</strong></span> <br>
+      <span id="query"></span> <br>
+      <span id="status"></span> <br>
+      <span id="sessionStateTest"></span> <br>
+
+
       
-          <br>
-          Characteristic:
-          <select id="cboCharacteristic">
-              <option value="Last Blossom">Last Blossom</option>
-              <option value="Beast">Beast</option>
-              <option value="Master">Master</option>
-              <option value="Minion">Minion</option>
-            </select>
-        
-                    <table>
+      <br><br><br><br><br><br><br><br>
+      <h2>Course Test</h2>
+      <table>
         <tr>
           <td> Student </td>
           <td> Course </td>
@@ -254,17 +227,14 @@
           <td></td>
         </tr>
         <tr>
-          <td><button onclick="studentList()">Retrieve Student Details</button></td>
           <td><button onclick="courseList()">List Courses</button></td>
-          <td><button onclick="modelList()">List All Models</button></td>
-          <td><button onclick="factionList('Faction')">Faction List</button></td>
-          <td><button onclick="factionList('Characteristic')">Characteristic List</button></td>
-          <td><button onclick="returnTest()">returnTest</button></td>
-        </tr>
-        <tr><td id="query"> Query: </td></tr>
-        <tr><td id="status"> Status: </td></tr>
       </table>
     </p>
-    <p id="results"> </p>
+
+    <script>
+        sessionStateTest();
+      </script>
+  
+
   </body>
 </html>
