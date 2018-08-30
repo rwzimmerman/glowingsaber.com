@@ -55,7 +55,7 @@ exports.handler = async (event, context) => {
     let net_profit = 0;
     lines.slice(1).forEach(function (raw_line) {
         let line = raw_line.split(',');
-        if (line.length < 3) { return null; }
+        if (line.length < 1) { return null; }
         console.log(line);
         net_profit += line[2] - line[3];
     });
