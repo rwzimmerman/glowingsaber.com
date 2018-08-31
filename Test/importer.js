@@ -12,8 +12,8 @@ exports.handler = async (event, context) => {
     const srcBucket = event.Records[0].s3.bucket.name;
     const srcKey    = event.Records[0].s3.object.key;
 
-    //Detect which table file has been loaded.  Don't run if not one of the
-    //five known file names.
+    //Detect which table file has been loaded.  
+    //Don't run if not one of the known file names.
     if (srcKey.match(/gs_ModelList.csv/) != null) {
         const table = "ModelList";
         const msg = "Processing:" + srcKey;
