@@ -106,7 +106,7 @@ p{
 
 
 
-.h1{
+h1{
 	font-size: 250%;
 	font-weight: bold;
 	text-decoration: none;
@@ -115,14 +115,14 @@ p{
 	padding-bottom: 20px; 
 	color: #111399;
 }
-.h2{
+h2{
 	display: inline-block;
 	font-size: 150%;
 	font-weight: bold;
 	padding-top: 40px;
 	color: #111399;
 }
-.h3{
+h3{
 	display: inline-block;
 	font-weight:bold;
 	padding-top: 22px;
@@ -155,7 +155,7 @@ p{
 }
 
 
-.button {
+button {
 	background-color: #111399;
 	color: #D1D1BA;
 	padding: 5px 25px;
@@ -171,7 +171,7 @@ p{
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.25), 0 6px 20px 0 rgba(0,0,0,0.25);
 }
 
-.button:hover {
+button:hover {
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.45), 0 6px 20px 0 rgba(0,0,0,0.45);
 	border-color: black;
 }
@@ -319,5 +319,8 @@ p{
 
 
 
+.list li {
+	margin-left: 25px;
+}
 
 

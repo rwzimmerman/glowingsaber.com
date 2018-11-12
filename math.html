@@ -39,9 +39,8 @@
             <a href="resources.html">Resources</a>
             <a href="rules.html">Rules</a>
             <a href="math.html">Math</a>
-            <a href="factions.html">Factions</a>
             <a href="othergames.html">Other Games</a>
-            <a href="tech.html">Tech</a>
+            <a href="GURPS.html">GURPS</a>
         </div>
             
         <br><br> <br>
@@ -57,7 +56,7 @@
             <div class="content" title="Game Math">
 
 
-                <p class="h1">Game Math</p>
+                <h1>Game Math</h1>
                 <p>Miscellaneous thoughts and tables having to do with the probability of various game mechanics.</p> 
                 <p>Card draw mechanics are calculated using a 54-card "Malifaux" deck. That is a deck with cards valued 
                     from 1 to 13 for each of four suits, 1 black joker (value of 0 with no suit) and one red joker 
@@ -73,11 +72,11 @@
                 
 
                 <! SUITED CARD DATA>
-                <p class="h2">Drawing a Suited Card</p>
+                <h2>Drawing a Suited Card</h2>
                 <p>This table shows the percentage chance of drawing a suited card or better (vertical axis) when 
                     you draw x number of cards (horizontal axis). For example, if you draw six cards you have a 
                     57.8% chance of having an 8 or higher of any given suit.</p>
-                <button class="button" id="buttonSuitedCard" onclick="toggleTable('buttonSuitedCard','#suitedOddsWide','#suitedOddsNarrow')">Show</button>
+                <button id="buttonSuitedCard" onclick="toggleTable('buttonSuitedCard','#suitedOddsWide','#suitedOddsNarrow')">Show</button>
 
                 <div id="suitedOddsWide" style="display:none">
 
@@ -535,12 +534,12 @@
                 </div>
 
                 <! UNSUITED CARD DATA>
-                <p class="h2">Drawing an Unsuited Card</p>
+                <h2>Drawing an Unsuited Card</h2>
                 <p>This table shows the percentage chance of drawing an unsuited card or better (vertical axis) when you 
                     draw x number of cards (horizontal axis). For example, if you draw six cards you have a 98.0% chance 
                     of having at least one 8 or higher, of any suit.</p>
 
-                <button class="button" id="buttonUnsuitedCard" onclick="toggleTable('buttonUnsuitedCard','#unsuitedOddsWide','#unsuitedOddsNarrow')">Show</button>
+                <button id="buttonUnsuitedCard" onclick="toggleTable('buttonUnsuitedCard','#unsuitedOddsWide','#unsuitedOddsNarrow')">Show</button>
                     
                 <div id="unsuitedOddsWide" style="display:none">
 

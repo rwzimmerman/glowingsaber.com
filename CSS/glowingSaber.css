@@ -34,7 +34,7 @@ a:active{
 
 
 
-.button {
+button {
 	background-color: #83110F;
 	color: #D1D1BA;
 }
@@ -53,13 +53,13 @@ commentedout {
 
 
 
-.h1{
+h1{
 	color: #83110F;
 }
-.h2{
+h2{
 	color: #83110F;
 }
-.h3{
+h3{
 	color: #232424;
 }
 .newitem{
