@@ -65,10 +65,6 @@ img.icon {
 }
 
 
-
-
-
-
 a{
 	color: #111399;
 }
@@ -84,26 +80,6 @@ p{
 	margin-top: 2px;
 	width: 100%;
 }
-
-
-
-
-
-
-.indent{
-	display: inline-block;
-	padding-left: 25;
-	display: inline-block;
-}
-
-
-.hangingindent{
-	display: inline-block;
-	padding-left: 70;
-	text-indent: -70px ;
-	display: inline-block;
-}
-
 
 
 h1{
@@ -128,6 +104,32 @@ h3{
 	padding-top: 22px;
 	color: #232424;
 }
+
+
+
+
+
+/**************************************************************************/
+
+
+
+.indent{
+	display: inline-block;
+	padding-left: 25;
+	display: inline-block;
+}
+
+
+.hangingindent{
+	display: inline-block;
+	padding-left: 70;
+	text-indent: -70px ;
+	display: inline-block;
+}
+
+/**************************************************************************/
+
+
 .newitem{
 	font-weight:bold;
 	color: red;
@@ -155,6 +157,8 @@ h3{
 }
 
 
+
+/**************************************************************************/
 button {
 	background-color: #111399;
 	color: #D1D1BA;
@@ -178,6 +182,7 @@ button:hover {
 
 
 
+/**************************************************************************/
 /* Standard table to data*/
 .dataTable {
 	border: 1px solid #AAB47E;
@@ -237,7 +242,7 @@ button:hover {
 
 
 
-
+/**************************************************************************/
 /* Top Nav  - Add background color*/
 .topnav {
 	overflow: hidden;
@@ -285,7 +290,8 @@ button:hover {
 
 
 
-/* Bottom Nav  */
+/**************************************************************************/
+/**Bottom Nav bar*/
 .bottomnav {
 	overflow: hidden;
 	width: 100%;
@@ -315,12 +321,26 @@ button:hover {
     color: #D1D1BA;
 }
 
-
-
-
+/**************************************************************************/
+/**Lists*/
 
 .list li {
 	margin-left: 25px;
 }
 
+.listColumn50 {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.listRow:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.listRow li {
+	margin-left: 25px;
+}
 
